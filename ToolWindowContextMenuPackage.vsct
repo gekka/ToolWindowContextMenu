@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" 
+              xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <Extern href="stdidcmd.h"/>
+    <Extern href="vsshlids.h"/>
+
+    <Commands package="guidVSIXProjectPackage">
+
+        <Menus >
+            <Menu guid="guidVSIXProjectPackageCmdSet" id="IDM_ContentContext" type="Context" >
+                <Strings>
+                    <ButtonText>Text</ButtonText>
+                    <CommandName>Name</CommandName>
+                </Strings>
+            </Menu>
+        </Menus>
+        
+        <Groups>
+            <Group guid="guidVSIXProjectPackageCmdSet" id="IDG_1" priority="0x0001">
+                <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_EZTOOLWINTAB"/>
+            </Group>
+            <Group guid="guidVSIXProjectPackageCmdSet" id="IDG_2" priority="0x0001">
+                <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_DOCKEDWINDOW"/>
+            </Group>
+            <Group guid="guidVSIXProjectPackageCmdSet" id="IDG_3" priority="0x0001">
+                <Parent guid="guidVSIXProjectPackageCmdSet" id="IDM_ContentContext"/>
+            </Group>
+        </Groups>
+        
+        <Buttons>
+            <Button guid="guidVSIXProjectPackageCmdSet" id="ID_CMD_ShowToolWindow" priority="0x0100" type="Button">
+                <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1"/>
+                <Strings>
+                    <ButtonText>Show Tool Window1</ButtonText>
+                </Strings>
+            </Button>
+
+            <Button guid="guidVSIXProjectPackageCmdSet" id="ID_CMD_ContextMenu_1" priority="0x0100" type="Button">
+                <Parent guid="guidVSIXProjectPackageCmdSet" id="IDG_1"/>
+                <CommandFlag>DefaultDisabled</CommandFlag>
+                <Strings>
+                    <ButtonText>🆗 EZTOOLWINTAB</ButtonText>
+                </Strings>
+            </Button>
+            <Button guid="guidVSIXProjectPackageCmdSet" id="ID_CMD_ContextMenu_2" priority="0x0100" type="Button">
+                <Parent guid="guidVSIXProjectPackageCmdSet" id="IDG_2"/>
+                <CommandFlag>DefaultDisabled</CommandFlag>
+                <Strings>
+                    <ButtonText>🆗 DOCKEDWINDOW</ButtonText>
+                </Strings>
+            </Button>
+            <Button guid="guidVSIXProjectPackageCmdSet" id="ID_CMD_ContextMenu_3" priority="0x0100" type="Button">
+                <Parent guid="guidVSIXProjectPackageCmdSet" id="IDG_3"/>
+                <CommandFlag>DefaultDisabled</CommandFlag>
+                <Strings>
+                    <ButtonText>🆗 Custom ContextMenu</ButtonText>
+                </Strings>
+            </Button>
+        </Buttons>
+    </Commands>
+    
+    <Symbols>
+        <GuidSymbol name="guidVSIXProjectPackage" value="{9F126C84-CA73-4ECC-AB8E-54A3D5286DE4}" /> <!-- change your GUID -->
+
+        <GuidSymbol name="guidVSIXProjectPackageCmdSet" value="{C085B947-854B-47DB-9178-3C4A987DD6ED}">  <!-- change your GUID -->
+            <IDSymbol name="IDM_ContentContext" value="0x0100"/>
+            
+            <IDSymbol name="IDG_1" value="0x0201"/>
+            <IDSymbol name="IDG_2" value="0x0202"/>
+            <IDSymbol name="IDG_3" value="0x0203"/>
+            <IDSymbol name="IDG_4" value="0x0204"/>
+
+            <IDSymbol name="ID_CMD_ShowToolWindow" value="0x0300" />
+            <IDSymbol name="ID_CMD_ContextMenu_1" value="0x0301" />
+            <IDSymbol name="ID_CMD_ContextMenu_2" value="0x0302" />
+            <IDSymbol name="ID_CMD_ContextMenu_3" value="0x0303" />
+        </GuidSymbol>
+    </Symbols>
+</CommandTable>
